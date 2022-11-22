@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { usePokemonStore } from "@/stores/pokemon.store";
-
-const props = defineProps({
+defineProps({
   numberOfFavorites: {
     type: Number,
     required: true,
