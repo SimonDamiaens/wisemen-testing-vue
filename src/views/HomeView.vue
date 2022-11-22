@@ -15,7 +15,6 @@ onBeforeMount(() => {
 const searchText = ref("");
 
 const filteredPokemons = computed(() => {
-  //console.log(store.filterPokemons(searchText.value));
   return store.filterPokemons(searchText.value);
 });
 

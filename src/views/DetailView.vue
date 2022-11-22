@@ -13,7 +13,6 @@ const pokemonId = computed<string>(() => route.params.id.toString());
 const store = usePokemonStore();
 
 const isFavorite = computed<boolean>(() => {
-  console.log("Test");
   return store.isFavorite(Number.parseInt(pokemonId.value));
 });
 

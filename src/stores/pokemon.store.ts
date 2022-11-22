@@ -33,9 +33,7 @@ export const usePokemonStore = defineStore("pokedex", () => {
 
   function deleteFavorite(id: Number) {
     const index = favorites.value.indexOf(id);
-    console.log(index);
     favorites.value.splice(index, 1);
-    console.log(favorites.value);
   }
 
   function isFavorite(id: Number) {
