@@ -12,13 +12,16 @@ const pokemonId = computed<string>(() => route.params.id.toString());
 
 const store = usePokemonStore();
 
-const isFavorite = computed<boolean>(() =>
-  store.isFavorite(Number.parseInt(pokemonId.value))
-);
+const isFavorite = computed<boolean>(() => {
+  console.log("Test");
+  return store.isFavorite(Number.parseInt(pokemonId.value));
+});
 
 const onFavoriteButtonClick = () => {
   if (isFavorite.value) {
     store.deleteFavorite(Number.parseInt(pokemonId.value));
+  } else {
+    store.addFavorite(Number.parseInt(pokemonId.value));
   }
 };
 

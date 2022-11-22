@@ -9,10 +9,10 @@ defineProps({
   },
 });
 
-const emits = defineEmits(["click", "wisemen"]);
+const emits = defineEmits(["click"]);
 
 const onFavoriteButtonClick = () => {
-  emits("wisemen");
+  emits("click");
 };
 </script>
 

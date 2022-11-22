@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import Heart from "../assets/heart.png";
+import RedHeart from "..//assets/red-heart.png";
+import { computed } from "vue";
+
 const props = defineProps({
   isFavorite: {
     type: Boolean,
@@ -8,13 +12,11 @@ const props = defineProps({
 
 const emits = defineEmits(["click"]);
 
-const imageSrc = props.isFavorite
-  ? "../assets/heart.png"
-  : "../assets/red-heart.png";
+const imageSrc = computed(() => (props.isFavorite ? RedHeart : Heart));
 </script>
 
 <template>
-  <div @click="emits('click')">
+  <button @click="emits('click')">
     <img class="w-7 h-7 transition-all" :src="imageSrc" alt="♡" />
-  </div>
+  </button>
 </template>
