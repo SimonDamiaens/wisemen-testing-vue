@@ -30,7 +30,7 @@ onMounted(() => {
   <main class="min-h-screen">
     <div class="max-w-6xl m-auto">
       <HomeHeader v-model="searchText" />
-      <Favorite />
+      <Favorite :numberOfFavorites="store.favorites.length" />
       <CircleLoader v-if="store.isLoading" />
       <div v-if="!store.isLoading">
         <PokemonOverview :pokemons="filteredPokemons" />

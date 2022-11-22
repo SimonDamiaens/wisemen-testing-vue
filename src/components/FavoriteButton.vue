@@ -1,8 +1,12 @@
 <script setup lang="ts">
 import { usePokemonStore } from "@/stores/pokemon.store";
 
-const store = usePokemonStore();
-const numberOfFavorites = store.favorites.length;
+const props = defineProps({
+  numberOfFavorites: {
+    type: Number,
+    required: true,
+  },
+});
 </script>
 
 <template>
