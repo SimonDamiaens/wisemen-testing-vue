@@ -4,12 +4,19 @@ import Favorite from "@/components/FavoriteButton.vue";
 import HomeHeader from "@/components/HomeHeader.vue";
 import PokemonOverview from "@/components/PokemonOverview.vue";
 import { usePokemonStore } from "@/stores/pokemon.store";
-import { onBeforeMount, onMounted } from "vue";
+import { computed, onBeforeMount, onMounted, ref } from "vue";
 
 const store = usePokemonStore();
 
 onBeforeMount(() => {
   store.isLoading = true;
+});
+
+const searchText = ref("");
+
+const filteredPokemons = computed(() => {
+  //console.log(store.filterPokemons(searchText.value));
+  return store.filterPokemons(searchText.value);
 });
 
 onMounted(() => {
@@ -23,12 +30,11 @@ onMounted(() => {
 <template>
   <main class="min-h-screen">
     <div class="max-w-6xl m-auto">
-      <HomeHeader />
+      <HomeHeader v-model="searchText" />
       <Favorite />
-      <CircleLoader v-if="store.isLoading && store.singlePokemon" />
-
-      <div v-if="!store.isLoading && store.pokemons">
-        <PokemonOverview :pokemons="store.pokemons" />
+      <CircleLoader v-if="store.isLoading" />
+      <div v-if="!store.isLoading">
+        <PokemonOverview :pokemons="filteredPokemons" />
       </div>
     </div>
   </main>

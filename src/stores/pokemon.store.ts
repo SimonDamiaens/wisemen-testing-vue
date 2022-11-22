@@ -42,6 +42,24 @@ export const usePokemonStore = defineStore("pokedex", () => {
     return favorites.value.includes(id);
   }
 
+  function filterPokemons(searchText: string): Pokemon[] {
+    if (searchText.match(/^[0-9]+$/)) {
+      return pokemons.value.filter((poke) => {
+        return poke.id === Number(searchText);
+      });
+    } else if (searchText.match(/^[a-zA-Z]+$/)) {
+      return pokemons.value.filter((poke) => {
+        const types = poke.types.filter((type) => {
+          return searchText.toLowerCase().includes(type.type.name);
+        });
+        return (
+          poke.name.includes(searchText.toLowerCase()) || types.length !== 0
+        );
+      });
+    }
+    return pokemons.value;
+  }
+
   return {
     pokemons,
     singlePokemon,
@@ -53,5 +71,6 @@ export const usePokemonStore = defineStore("pokedex", () => {
     getFavorites,
     addFavorite,
     deleteFavorite,
+    filterPokemons,
   };
 });

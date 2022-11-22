@@ -1,3 +1,24 @@
+<script setup lang="ts">
+import { computed, type PropType } from "vue";
+
+const props = defineProps({
+  modelValue: {
+    type: String as PropType<string>,
+    required: true,
+    default: () => "nl",
+  },
+});
+
+const emit = defineEmits(["update:modelValue"]);
+
+const model = computed({
+  get: () => props.modelValue,
+  set: (value) => {
+    emit("update:modelValue", value);
+  },
+});
+</script>
+
 <template>
   <form class="p-2 xs:p-6 mb-2">
     <label
@@ -27,6 +48,7 @@
       </div>
       <input
         type="search"
+        v-model="model"
         id="default-search"
         class="block p-2 pl-10 w-full text-sm text-gray-900 bg-gray-100 rounded-lg"
         placeholder="Search Pokemons"
