@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 
 import { mount } from "@vue/test-utils";
-import SearchBar from "../SearchBar.vue";
+import SearchBar from "../../SearchBar.vue";
 
 describe("SearchBar Tests", () => {
   it("should render", () => {
