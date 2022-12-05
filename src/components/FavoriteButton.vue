@@ -9,7 +9,7 @@ defineProps({
 
 <template>
   <section
-    class="mx-2 xs:mx-6 mt-4 p-4 h-28 bg-gradient-to-br from-blue-900 to-purple-700 rounded-lg text-white"
+    class="favoriteButton mx-2 xs:mx-6 mt-4 p-4 h-28 bg-gradient-to-br from-blue-900 to-purple-700 rounded-lg text-white"
   >
     <RouterLink
       class="h-full flex flex-col justify-end relative"

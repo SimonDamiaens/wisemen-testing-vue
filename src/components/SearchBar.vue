@@ -52,6 +52,7 @@ const model = computed({
         id="default-search"
         class="block p-2 pl-10 w-full text-sm text-gray-900 bg-gray-100 rounded-lg"
         placeholder="Search Pokemons"
+        data-test="search-pokemon"
       />
     </div>
   </form>

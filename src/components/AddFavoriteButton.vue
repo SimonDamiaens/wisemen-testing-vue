@@ -16,7 +16,7 @@ const imageSrc = computed(() => (props.isFavorite ? RedHeart : Heart));
 </script>
 
 <template>
-  <button @click="emits('click')">
+  <button class="addFavorite" @click="emits('click')">
     <img class="w-7 h-7 transition-all" :src="imageSrc" alt="♡" />
   </button>
 </template>

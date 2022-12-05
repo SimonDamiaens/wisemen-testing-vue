@@ -1,13 +1,13 @@
-import { describe, it, expect } from "vitest";
+import { describe, test, expect } from "vitest";
 
 import { mount } from "@vue/test-utils";
-import DetailHeader from "../../AddFavoriteButton.vue";
+import DetailHeader from "../../DetailHeader.vue";
 import router from "@/router";
 
 describe("DetailHeader Tests", () => {
   const isFavorite = true;
 
-  it("should render", () => {
+  test("should render", () => {
     const wrapper = mount(DetailHeader, {
       props: { isFavorite: isFavorite },
       global: {

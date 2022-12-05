@@ -76,3 +76,22 @@ You should use **await** when you call **trigger()** to ensure that Vue updates 
 
 The differences between component and end-to-end testing in-depth: [Choosing a Testing Type](https://docs.cypress.io/guides/core-concepts/testing-types#What-you-ll-learn)
 
+TBC
+
+# End to End Testing
+**Cypress** was originally designed to run end-to-end (E2E) tests on anything that runs in a browser. A typical E2E test visits the application in a browser and performs actions via the UI just like a real user would.
+
+## Adding Cypress to your project
+Follow this guide to add Cypress to your project: [Installation | Cypress](https://docs.cypress.io/guides/getting-started/installing-cypress)
+
+## Opening Cypress
+
+Follow this guide to open Cypress: [Opening the app | Cypress](https://docs.cypress.io/guides/getting-started/opening-the-app)
+
+Run this command to open the Cypress App
+
+	npx cypress open
+
+The frontend does also need to be running
+
+	npm run dev

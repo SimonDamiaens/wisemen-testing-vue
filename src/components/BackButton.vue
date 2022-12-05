@@ -4,7 +4,7 @@ import { RouterLink } from "vue-router";
 <template>
   <RouterLink class="flex items-center" to="/">
     <img
-      class="w-5 h-5 mr-2"
+      class="backButton w-5 h-5 mr-2"
       src="../assets/left-arrow.png"
       alt="Return Home Arrow"
     />

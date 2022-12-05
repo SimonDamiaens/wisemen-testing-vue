@@ -11,7 +11,7 @@ defineProps({
 });
 </script>
 <template>
-  <section class="p-2 xs:p-6 flex flex-wrap justify-between">
+  <section class="pokemon-list p-2 xs:p-6 flex flex-wrap justify-between">
     <RouterLink
       v-for="pokemon in pokemons"
       :key="pokemon.id"
